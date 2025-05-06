@@ -1,4 +1,4 @@
-package dyaz,io.database;
+package dyaz.io.database;
 
 /**
  * Hello world!
