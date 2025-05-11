@@ -50,7 +50,7 @@ public class StatementTest {
     Statement statement = connection.createStatement();
 
     String sql = """
-            DELETE FROM customers;
+            DELETE FROM comments;
             """;
     int update = statement.executeUpdate(sql);
     System.out.println(update);
