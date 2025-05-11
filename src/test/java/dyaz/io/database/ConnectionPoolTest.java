@@ -39,3 +39,7 @@ public class ConnectionPoolTest {
     Connection connection = ConnectionUtil.getDataSource().getConnection();
   }
 }
+
+//TODO Note:
+// HikariCP untuk mengatur koneksi pool nya
+// https://github.com/brettwooldridge/HikariCP
