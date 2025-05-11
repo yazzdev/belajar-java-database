@@ -27,8 +27,12 @@ public class StatementTest {
     Statement statement = connection.createStatement();
 
     String sql = """
-            INSERT INTO customers(id, name, email)
-            VALUES ('124', 'Amrullah', 'amrullah@email.com')
+            INSERT INTO customers(id, name, email) VALUES
+            ('123', 'Dyaz', 'dyaz@email.com'),
+            ('124', 'Amrullah', 'amrullah@email.com'),
+            ('125', 'Nikmah', 'nikmah@email.com'),
+            ('126', 'Ramadhani', 'ramadhani@email.com'),
+            ('127', 'Nira', 'nira@email.com')
             """;
     int update = statement.executeUpdate(sql);
     System.out.println(update);
