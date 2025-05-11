@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class ResultSetTest {
 
   @Test
-  void tesetExecuteQuery() throws SQLException {
+  void testExecuteQuery() throws SQLException {
 
     Connection connection = ConnectionUtil.getDataSource().getConnection();
     Statement statement = connection.createStatement();
