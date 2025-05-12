@@ -44,4 +44,14 @@ CREATE TABLE comments (
     PRIMARY KEY (id)
 ) ENGINE = InnoDB;
 ```
+### Crate Table sample_time
+```sql
+CREATE TABLE sample_time (
+    id INT NOT NULL AUTO_INCREMENT,
+    sample_date DATE,
+    sample_time TIME,
+    sample_timestamp TIMESTAMP,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB;
+```
 
