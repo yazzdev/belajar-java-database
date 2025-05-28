@@ -11,8 +11,8 @@ public class CommentRepositoryImpl implements CommentRepository {
   @Override
   public void insert(Comment comment) {
     try (Connection connection = ConnectionUtil.getDataSource().getConnection()) {
-      String sql = "INSERT INTO comments(email, comment) VALUES(?,?)";
-      try (PreparedStatement statement = connection.prepareStatement(sql)) {
+      String sql = "INSERT INTO comments(email, comment) VALUES(?, ?)";
+      try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
         statement.setString(1, comment.getEmail());
         statement.setString(2, comment.getComment());
         statement.executeUpdate();
@@ -33,7 +33,7 @@ public class CommentRepositoryImpl implements CommentRepository {
     try (Connection connection = ConnectionUtil.getDataSource().getConnection()) {
       String sql = "SELECT * FROM comments WHERE id = ?";
 
-      try (PreparedStatement statemet = connection.prepareStatement(sql)) {
+      try (PreparedStatement statemet = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
         statemet.setInt(1, id);
         try (ResultSet resultSet = statemet.executeQuery()) {
           if (resultSet.next()) {
@@ -81,7 +81,7 @@ public class CommentRepositoryImpl implements CommentRepository {
 
       String sql = "SELECT * FROM comments WHERE email = ?";
 
-      try (PreparedStatement statemet = connection.prepareStatement(sql)) {
+      try (PreparedStatement statemet = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
         statemet.setString(1, email);
 
